@@ -33,10 +33,9 @@ class createImage(Action):
     def name(self) -> Text:
         return "action_create_image"
 
-    def run(self, dispatcher: CollectingDispatcher,
+    def run(self,
+            dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Hello World!")
-
+        dispatcher.utter_message("Hello World! from custom action")
         return []
