@@ -6,11 +6,12 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
+import os
 import requests
 from typing import Any, Text, Dict, List
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+URL = os.environ["URL"] # http://0.0.0.0:8084/imgGenerate/
 
 
 #
@@ -37,5 +38,9 @@ class createImage(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message("Hello World! from custom action")
+
+        prompt = tracker.latest_message['text']
+        requests.post(f"{URL}?text={prompt[6:]}&account=false")
+        dispatcher.utter_message(f"/home/oscar/Labs/text2image_wj/img/output.jpg")
+
         return []

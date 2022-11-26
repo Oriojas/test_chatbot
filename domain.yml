@@ -9,6 +9,7 @@ intents:
   - mood_unhappy
   - bot_challenge
   - create_image
+  - query_image
 
 actions:
   - action_create_image
@@ -32,6 +33,14 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_image:
+  - text: "Do you want me to create for a image?, y/n and describe you image"
+  - text: "Do you need me to create for a image?, y/n and describe you image "
+  - text: "Would you like to create a image?, , y/n and describe you image"
+
+  utter_create_image:
+  - text: "you image in: "
 
 session_config:
   session_expiration_time: 60
