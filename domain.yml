@@ -41,6 +41,7 @@ responses:
 
   utter_create_image:
   - text: "you image in: "
+    image: "/home/oscar/Labs/text2image_wj/img/output.jpg"
 
 session_config:
   session_expiration_time: 60
